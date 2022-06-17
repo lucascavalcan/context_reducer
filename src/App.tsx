@@ -15,24 +15,27 @@ const App = () => {
       dispatch ({
         type: "CHANGE_STATUS",
         payload: {
-          status: "dark"
+          status: "dark",
+          color: "light"
         }
       });
     } else {
       dispatch ({
         type: "CHANGE_STATUS",
         payload: {
-          status: "light"
+          status: "light",
+          color: "dark"
         }
       });
     }
-  }
+  };
+
 
   return (
     <BrowserRouter>
       <div style={{
         backgroundColor: state.theme.status === "light" ? "#FFF" : "#000",
-        color: state.theme.status === "light" ? "000" : "#FFF"
+        color: state.theme.color === "light" ? "#fff" : "#000"
       }}>
         <h1>Título da página</h1>
         Tema: {state.theme.status}
